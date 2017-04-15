@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170415025338) do
+ActiveRecord::Schema.define(version: 20170415055932) do
+
+  create_table "books", force: :cascade do |t|
+    t.string   "author",                                 null: false
+    t.string   "title",                                  null: false
+    t.date     "published_on",                           null: false
+    t.string   "publisher",                              null: false
+    t.string   "language",                               null: false
+    t.string   "binding_format"
+    t.string   "isbn",                                   null: false
+    t.decimal  "price",          precision: 8, scale: 2
+    t.string   "dewey_code"
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.index ["author"], name: "index_books_on_author"
+    t.index ["dewey_code"], name: "index_books_on_dewey_code"
+    t.index ["isbn"], name: "index_books_on_isbn", unique: true
+    t.index ["title"], name: "index_books_on_title"
+  end
 
   create_table "readers", force: :cascade do |t|
     t.string   "email",                        null: false
