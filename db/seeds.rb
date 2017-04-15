@@ -19,3 +19,18 @@
         state: Faker::Address.state_abbr, 
         zip: Faker::Address.zip.first(5))
 end
+
+
+
+10.times do
+    Book.create(
+      author: Faker::Book.author,
+      title: Faker::Book.title,
+      published_on: Faker::Date.birthday(0, 100),
+      publisher: Faker::Book.publisher,
+      language: Faker::Demographic.demonym,
+      binding_format: Faker::Number.between(0, 1),
+      isbn: Faker::Number.number(13),
+      price: Faker::Commerce.price,
+      dewey_code: Faker::Number.number(8))
+end
