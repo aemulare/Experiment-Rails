@@ -1,0 +1,29 @@
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Author</th>
+        <th>Title</th>
+        <th>Published on</th>
+        <th>Publisher</th>
+        <th>Language</th>
+        <th>Binding</th>
+        <th>ISBN13</th>
+        <th>Dewey Code</th>
+        <th>Price</th> 
+    </tr>
+    <% @books.each do |b| %>
+        <tr>
+            <td><%= b.id %></td>
+            <td><%= b.author %></td>
+            <td><%= b.title %></td>
+            <td><%= b.published_on %></td>
+            <td><%= b.publisher %></td>
+            <td><%= b.language %></td>
+            <td><%= b.binding_format %></td>
+            <td><%= b.isbn %></td>
+            <td><%= b.dewey_code %></td>
+            <td><%= b.price %></td>
+        </tr>
+    <%end %>
+    
+</table>

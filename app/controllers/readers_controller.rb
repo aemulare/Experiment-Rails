@@ -1,7 +1,7 @@
 class ReadersController < ApplicationController
     
     def index
-        @readers = Reader.all
+      @readers = Reader.all
     end
     
 end

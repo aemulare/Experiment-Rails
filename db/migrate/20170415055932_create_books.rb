@@ -6,12 +6,12 @@ class CreateBooks < ActiveRecord::Migration[5.0]
       t.date :published_on, null: false
       t.string :publisher, null: false
       t.string :language, null: false
-      t.string :binding_format
+      t.integer :binding_format, default: 0
       t.string :isbn, null: false
-      t.decimal :price, precision: 8, scale: 2
+      t.decimal :price,
       t.string :dewey_code, index: true
       t.timestamps
-      
+
       t.index :isbn, unique: true
     end
   end
