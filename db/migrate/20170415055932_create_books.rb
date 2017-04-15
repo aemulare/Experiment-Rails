@@ -8,7 +8,7 @@ class CreateBooks < ActiveRecord::Migration[5.0]
       t.string :language, null: false
       t.integer :binding_format, default: 0
       t.string :isbn, null: false
-      t.decimal :price,
+      t.decimal :price
       t.string :dewey_code, index: true
       t.timestamps
 
