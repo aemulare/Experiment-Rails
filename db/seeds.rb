@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+10.times do
+    Reader.create(
+        email: Faker::Internet.free_email, 
+        first_name: Faker::Name.first_name, 
+        last_name: Faker::Name.last_name, 
+        dob: Faker::Date.birthday(18, 95), 
+        phone: Faker::PhoneNumber.phone_number.gsub('.', ''), 
+        address_line1: Faker::Address.street_address, 
+        address_line2: Faker::Address.secondary_address, 
+        city: Faker::Address.city, 
+        state: Faker::Address.state_abbr, 
+        zip: Faker::Address.zip.gsub('-', ''))
+end
