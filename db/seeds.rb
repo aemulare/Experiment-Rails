@@ -17,5 +17,5 @@
         address_line2: Faker::Address.secondary_address, 
         city: Faker::Address.city, 
         state: Faker::Address.state_abbr, 
-        zip: Faker::Address.zip.gsub('-', ''))
+        zip: Faker::Address.zip.first(5))
 end
